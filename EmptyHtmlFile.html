@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>choses the MOOGer</title>
+    <style>
+        body {
+            background-color: #000; /* Matte black color */
+            margin: 0;
+            height: 100vh;
+            color: white; /* For contrast */
+        }
+
+        .arrow {
+            cursor: pointer; /* Changes the cursor to indicate it's clickable */
+            transition: transform 0.1s ease; /* Smooth transition for transform */
+        }
+
+            .arrow:hover {
+                transform: scale(1.1); /* Slightly enlarges the arrow on hover */
+                opacity: 0.8; /* Optional: changes the opacity on hover */
+            }
+
+            .arrow:active {
+                transform: scale(0.9);
+            }
+
+    </style>
+</head>
+<body>
+    <audio id="buttonAudio" src="audio/Britney Manson - FΛSHION (Single, 2023).mp3" preload="auto"></audio>
+    <script>
+document.write("<style>" +
+            "#tblText {" +
+            "   border-collapse: collapse;" +
+            "   width: 100%;" +
+            "}" +
+            "#tblText td {" +
+            "   text-align: center;" +
+            "   border: 1px solid black;" +
+            "   vertical-align: middle;" +
+            "   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;" +
+
+            "}" +
+            "#tblText th {" +
+            "   color: #DAA520;" +
+            "   font-size: 60px;" +
+            "   font-family: 'Orbitron', sans-serif;" +
+            "   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;" +
+            "   font-weight: bold;" +
+            "}" +
+            "</style>");
+let table = "<table id='tblText'>";
+
+var images = [
+            'images/cb700571fc9b9ca44d0a5d8ede4d0b15.png',
+            'images/adriana-lima-1-2.png',
+            'images/9fa6a280ab88fd6cea9d52b58a650c2e.png',
+            'images/rate-hernan-drago-harmony-93-6-v0-4g557re51y8b1.webp'
+];
+table += "<tr><th></th><th>" + "Choose Your MoGGer" + "</th></tr>";
+table += "<tr><td><br><br><br><br></td></tr><tr><td onclick='preves()'>" + "<img src='images/Picture2.png' id = 'lefterrow' class='arrow' alt='idontkow' height='250'>" + "</td>";
+table += "<td>" + "<img src='images/cb700571fc9b9ca44d0a5d8ede4d0b15.png' id = 'chico' alt='idontkow' height='500' class='shine-effect' >"; + "</td>";
+table += "<td onclick='nexst()'>" + "<img src='images/pngtree-black-gold-arrow-sign-png-image_6558169.png' id = 'ritgeerrow' class='arrow' alt='idontkow' height='250'>" + "</td>";
+table += "</tr><tr><td></td><td onclick='sub()'>" + "<img src='images/Picture1.png' id = 'chek' class='arrow' alt = 'idontkow' height = '100' > " + "</td >";
+table += "</tr></table>";
+
+var witch = 0;
+function updateImage() {
+            var imageDisplay = document.getElementById('chico');
+            imageDisplay.src = images[witch];
+}
+function nexst() {
+            witch = (witch - 1 + images.length) % images.length;
+            updateImage();
+            playAudio();
+}
+function preves() {
+            witch = (witch + 1) % images.length;
+            updateImage();
+            playAudio();
+}
+function sub() {
+    if (witch == 0) {
+        document.write("u have chosen chico");
+    }
+    if (witch == 1) {
+        document.write("u have chosen andriana");
+    }
+    if (witch == 2) {
+        document.write("u have chosen jourden");
+    }
+    if (witch == 3) {
+        document.write("u have chosen harman");
+    }
+}
+function playAudio() {
+    var audio = document.getElementById('buttonAudio');
+    audio.play();
+}
+table += "</tr></table>";
+document.write(table)</script>
+</body>
+</html>
